@@ -1,0 +1,52 @@
+﻿<Window x:Class="INICompare.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:INICompare"
+        mc:Ignorable="d"
+        Title="INI Compare" Height="600" Width="925"
+        Loaded="Window_Loaded"
+        
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        xmlns:src="clr-namespace:INICompare"
+        >
+    <Window.Resources>
+        <src:InvertBoolConverter x:Key="invertBoolConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" IsReadOnly="True" Text="{Binding INI1Path}" Background="{Binding INI1PathBrush}" Name="INI1PathTB" ToolTip="{Binding INI1Path}" />
+            <Button Grid.Column="1" Content="..." Height="25" Click="LoadINI1_Click" Width="25" />
+            <Button Grid.Column="2" Content="Compare" Click="Compare_Click" Width="70" IsEnabled="{Binding InComparison, Converter={StaticResource invertBoolConverter}}" />
+            <Button Grid.Column="3" Content="Switch" Click="Switch_Click" Width="50" />
+            <Button Grid.Column="4" Content="Uncompare" Click="Uncompare_Click" Width="70" IsEnabled="{Binding InComparison}" />
+            <Button Grid.Column="5" Content="..." Click="LoadINI2_Click" Width="25" />
+            <TextBox Grid.Column="6" IsReadOnly="True" Text="{Binding INI2Path}" Background="{Binding INI2PathBrush}" Name="INI2PathTB" ToolTip="{Binding INI2Path}" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <RichTextBox Name="INI1RichTextBox" Grid.Column="0" IsReadOnly="True" SizeChanged="INI1RichTextBox_SizeChanged" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="INIRichTextBox_ScrollChanged" />
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
+            <RichTextBox Name="INI2RichTextBox" Grid.Column="2" IsReadOnly="True" SizeChanged="INI2RichTextBox_SizeChanged" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="INIRichTextBox_ScrollChanged" />
+        </Grid>
+    </Grid>
+</Window>
