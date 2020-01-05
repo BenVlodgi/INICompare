@@ -25,7 +25,7 @@ namespace INICompare
         Microsoft.Win32.OpenFileDialog _openFileDialog = new Microsoft.Win32.OpenFileDialog();
 
         #region INI1Path
-        ///<summary>TODO: Document this.</summary>
+        ///<summary> File path for INI file 1.</summary>
         public string INI1Path
         {
             get { return (string)GetValue(INI1PathProperty); }
@@ -36,7 +36,7 @@ namespace INICompare
         public static readonly DependencyProperty INI1PathProperty = DependencyProperty.Register(nameof(INI1Path), typeof(string), typeof(MainWindow), new UIPropertyMetadata(default(string)));
         #endregion
         #region INI2Path
-        ///<summary>TODO: Document this.</summary>
+        ///<summary> File path for INI file 2.</summary>
         public string INI2Path
         {
             get { return (string)GetValue(INI2PathProperty); }
@@ -47,7 +47,7 @@ namespace INICompare
         public static readonly DependencyProperty INI2PathProperty = DependencyProperty.Register(nameof(INI2Path), typeof(string), typeof(MainWindow), new UIPropertyMetadata(default(string)));
         #endregion
         #region INI1PathBrush
-        ///<summary>TODO: Document INI1PathColor.</summary>
+        ///<summary> Colored Brush for INI 1 visual display. </summary>
         public Brush INI1PathBrush
         {
             get { return (Brush)GetValue(INI1PathBrushProperty); }
@@ -58,7 +58,7 @@ namespace INICompare
         public static readonly DependencyProperty INI1PathBrushProperty = DependencyProperty.Register(nameof(INI1PathBrush), typeof(Brush), typeof(MainWindow), new UIPropertyMetadata(default(Brush)));
         #endregion
         #region INI2PathBrush
-        ///<summary>TODO: Document INI2PathBrush.</summary>
+        ///<summary> Colored Brush for INI 2 visual display. </summary>
         public Brush INI2PathBrush
         {
             get { return (Brush)GetValue(INI2PathBrushProperty); }
@@ -69,7 +69,7 @@ namespace INICompare
         public static readonly DependencyProperty INI2PathBrushProperty = DependencyProperty.Register(nameof(INI2PathBrush), typeof(Brush), typeof(MainWindow), new UIPropertyMetadata(default(Brush)));
         #endregion
         #region InComparison
-        ///<summary>TODO: Document InComparison.</summary>
+        ///<summary> True when comparison mode is on. </summary>
         public bool InComparison
         {
             get { return (bool)GetValue(InComparisonProperty); }

@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("INICompare")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Use to run a visual comparison on *.ini files. Load *.ini files in each side, then click Compare to see lines added, changed, and edited. ")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("INICompare")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © Benjamin Thomas Blodgett 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
